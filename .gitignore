@@ -1,0 +1,10 @@
+.DS_Store
+_verify.html
+_navtest.html
+_gatetest.html
+index.source.html
+assets/
+*.bak
+*.bak.html
+*.bin
+*.b64
