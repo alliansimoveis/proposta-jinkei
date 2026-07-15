@@ -11,7 +11,7 @@ jobs:
       - name: FTPS deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.vibradados.com.br
+          server: vibradados.com.br
           username: vibradadoscombr
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
