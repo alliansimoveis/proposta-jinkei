@@ -12,7 +12,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: vibradados.com.br
-          username: vibradadoscombr
+          username: claude2@vibradados.com.br
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
