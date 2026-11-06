@@ -1,4 +1,4 @@
-name: Deploy proposta (FTPS -> public_html/jinkei)
+name: Deploy propostas (FTPS -> public_html/jinkei e public_html/larissa)
 on:
   push:
     branches: [ main ]
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: FTPS deploy
+      - name: FTPS deploy (jinkei)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: vibradados.com.br
@@ -23,3 +23,14 @@ jobs:
             **/.git*/**
             **/.github/**
             **/README.md
+            larissa/**
+      - name: FTPS deploy (larissa)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: vibradados.com.br
+          username: claude2@vibradados.com.br
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: public_html/larissa/
+          local-dir: ./larissa/
